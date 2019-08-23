@@ -7,7 +7,7 @@ services:
       ZOOKEEPER_HOST: zk-1:${ZK_PORT},zk-2:${ZK_PORT},zk-3:${ZK_PORT}
       KAFKA_HOST: kf-1:${KF_PORT},kf-2:${KF_PORT},kf-3:${KF_PORT}
       SCHEMA_REGISTRY_URL: http://schema-registry:${SR_PORT}
-      FF_PRODUCER_ENABLED: true
+      FF_PRODUCER_ENABLED: ${FF_PRODUCER_ENABLED}
     networks:
       - kafka-net
       - traefik-net
