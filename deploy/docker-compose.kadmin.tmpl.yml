@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   kadmin:
-    image: ${IMAGE_NAME:-hasnat/kadmin}:${IMAGE_TAG:-latest}
+    image: ${IMAGE_NAME:-bettercloud/kadmin}:${IMAGE_TAG:-latest}
     environment:
       ZOOKEEPER_HOST: zk-1:${ZK_PORT},zk-2:${ZK_PORT},zk-3:${ZK_PORT}
       KAFKA_HOST: kf-1:${KF_PORT},kf-2:${KF_PORT},kf-3:${KF_PORT}
