@@ -29,12 +29,11 @@ services:
       replicas: 1
       labels:
         traefik.frontend.auth.basic.users: ${UI_AUTH}
-        traefik.frontend.rule: Host:kadmin.${PUBLIC_HOSTNAME}
+        traefik.frontend.rule: Host:kadmin.${PUBLIC_HOSTNAME};ReplacePathRegex:^/$$ /kadmin/
         traefik.backend: kadmin
-        traefik.port: "${KADMIN_PORT}"
+        traefik.port: '${KADMIN_PORT}'
       restart_policy:
         delay: 30s
-        window: 2m
       resources:
         limits:
           cpus: '0.5'
