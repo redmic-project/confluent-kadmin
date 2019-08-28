@@ -14,7 +14,6 @@ services:
       KEY_STORE_PASSWORD: password
       KEY_PASSWORD: password
       FF_PRODUCER_ENABLED: ${FF_PRODUCER_ENABLED}
-      SERVER_CONTEXTPATH: /kadmin
     networks:
       - kafka-net
       - traefik-net
@@ -37,9 +36,9 @@ services:
       resources:
         limits:
           cpus: '0.5'
-          memory: 256M
+          memory: 512M
         reservations:
-          memory: 205M
+          memory: 256M
 
 networks:
   kafka-net:
